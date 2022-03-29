@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import configureStore from './src/stores';
 import {Text, TextInput} from 'react-native';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import {NativeBaseProvider} from 'native-base';
 
 const {store} = configureStore;
 
@@ -19,9 +20,11 @@ TextInput.defaultProps.allowFontScaling = false;
 const App = () => {
   return (
     <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <Navigation />
-      </QueryClientProvider>
+      <NativeBaseProvider>
+        <QueryClientProvider client={queryClient}>
+          <Navigation />
+        </QueryClientProvider>
+      </NativeBaseProvider>
     </Provider>
   );
 };

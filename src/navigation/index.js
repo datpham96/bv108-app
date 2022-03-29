@@ -3,12 +3,12 @@ import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStack from './Stacks';
 import {navigationRef, isReadyRef} from './RootNavigation';
-import {GlobalFont} from '../helpers/customs';
 import {fonts, sizes} from '../config/styles';
+import SplashScreen from 'react-native-splash-screen';
 
 function Navigation() {
   useEffect(() => {
-    GlobalFont.applyGlobal(fonts.lexendDeca.FONT_REGULAR, sizes.SIZE_19);
+    SplashScreen.hide();
   }, []);
   return (
     <NavigationContainer

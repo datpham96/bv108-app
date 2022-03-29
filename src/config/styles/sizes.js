@@ -1,4 +1,5 @@
 const sizes = {
+  DEFAULT: 13,
   ZERO: 0,
   SIZE_1: 1,
   SIZE_2: 2,

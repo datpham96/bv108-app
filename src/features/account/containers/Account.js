@@ -1,13 +1,14 @@
+import {Background} from 'base';
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
 
 const Account = () => {
   return (
-    <SafeAreaView>
+    <Background>
       <View>
         <Text>Account</Text>
       </View>
-    </SafeAreaView>
+    </Background>
   );
 };
 
