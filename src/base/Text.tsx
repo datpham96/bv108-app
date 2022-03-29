@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: sizes.DEFAULT,
     color: colors.COLOR_BLACK,
+    fontFamily: fonts.quicksand.FONT_REGULAR,
   },
 });
 

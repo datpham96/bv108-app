@@ -39,8 +39,11 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>LexendDeca-Black.ttf</string>
-		<string>LexendDeca-Regular.ttf</string>
+		<string>Quicksand-Bold.ttf</string>
+		<string>Quicksand-Light.ttf</string>
+		<string>Quicksand-Medium.ttf</string>
+		<string>Quicksand-Regular.ttf</string>
+		<string>Quicksand-SemiBold.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>FontAwesome.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
