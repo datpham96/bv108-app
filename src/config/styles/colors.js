@@ -1,16 +1,18 @@
 const colors = {
   inactiveIconBottomTab: '#8e8e8f',
-  COLOR_GREEN: '#007a3d',
+  COLOR_GREEN: '#15803d',
   COLOR_RED: '#da251c',
   COLOR_WHITE: '#FFFFFF',
   COLOR_BLACK: '#000000',
-  COLOR_PLACEHOLDER: '#888888',
-  COLOR_WHITE_GREY: '#eeeeee',
+  COLOR_PLACEHOLDER: '#a8a29e',
+  COLOR_WHITE_GREY: '#e7e5e4',
   COLOR_GREY: 'grey',
 
   //---native-base-----
   COLOR_NATIVE_BASE_SUCCESS_700: '#15803d',
   COLOR_NATIVE_BASE_LIGHT_300: '#d6d3d1',
+  COLOR_NATIVE_BASE_LIGHT_200: '#e7e5e4',
+  COLOR_NATIVE_BASE_LIGHT_100: '#f5f5f4',
 
   ///---------
   COLOR_PRIMARY: '#2ec7ab',

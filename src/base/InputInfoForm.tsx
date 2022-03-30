@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   input: {
     borderRadius: sizes.SIZE_20,
     flex: sizes.SIZE_1,
-    backgroundColor: colors.COLOR_WHITE_GREY,
+    backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_100,
     paddingHorizontal: sizes.SIZE_20,
     color: colors.COLOR_BLACK,
     ...commonStyles.heightInputForm,

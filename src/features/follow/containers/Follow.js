@@ -1,14 +1,19 @@
 import React from 'react';
 import {
   Background,
-  InputInfo,
-  ButtonInfo,
+  Input,
+  Button,
   Checkbox,
   ButtonItem,
   InputInfoForm,
 } from 'base';
 import {SafeAreaView, View, Text} from 'react-native';
-import {BoxFilter, InputDateTime, PopupConfirm} from 'components';
+import {
+  BoxFilter,
+  InputDateTime,
+  ModalFormOnlyTime,
+  PopupConfirm,
+} from 'components';
 import ButtonForm from 'src/base/ButtonForm';
 
 const Follow = () => {
@@ -17,8 +22,8 @@ const Follow = () => {
     <Background>
       <View>
         <Text>Follow</Text>
-        <InputInfo placeholder="d23523" />
-        <ButtonInfo label="Đăng nhập" />
+        <Input placeholder="d23523" />
+        <Button label="Đăng nhập" />
         <BoxFilter label="Đang theo dõi" />
         <ButtonForm label="Đang theo dõi" />
         <Checkbox
@@ -27,13 +32,26 @@ const Follow = () => {
           onPress={() => setIsCheckbox(!isCheckbox)}
         />
         <ButtonItem label="Đồng ý" />
-        <PopupConfirm
+        {/* <PopupConfirm
           content="Bạn có chắc chắn gộp bệnh nhân"
           onPressCancel={() => setIsCheckbox(false)}
           visible={isCheckbox}
+        /> */}
+        <InputDateTime
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
         />
-        <InputDateTime />
         <InputInfoForm placeholder="Nhập kết quả" />
+        <ModalFormOnlyTime
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
+          formName="Khởi phát"
+          visible={isCheckbox}
+          onPressCancel={() => {
+            setIsCheckbox(false);
+            console.log(12424);
+          }}
+        />
       </View>
     </Background>
   );

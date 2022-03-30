@@ -29,7 +29,7 @@ const BoxSearchComponent: React.FC<Props> = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.COLOR_WHITE_GREY,
+    backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_200,
     width: '100%',
     ...commonStyles.center,
     paddingVertical: sizes.SIZE_10,
