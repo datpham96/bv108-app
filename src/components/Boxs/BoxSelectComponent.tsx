@@ -10,7 +10,7 @@ export type Props = {
   onPress?: any;
 };
 
-const BoxFilterComponent: React.FC<Props> = ({
+const BoxSelectComponent: React.FC<Props> = ({
   containerStyle,
   label,
   labelStyle,
@@ -28,7 +28,11 @@ const BoxFilterComponent: React.FC<Props> = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_200,
+    backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_100,
+    borderRadius: sizes.SIZE_20,
+    ...commonStyles.heightInputForm,
+    borderWidth: sizes.SIZE_1,
+    borderColor: colors.COLOR_NATIVE_BASE_LIGHT_300,
     width: '100%',
     ...commonStyles.center,
     paddingVertical: sizes.SIZE_10,
@@ -37,4 +41,4 @@ const styles = StyleSheet.create({
   label: {},
 });
 
-export default BoxFilterComponent;
+export default BoxSelectComponent;

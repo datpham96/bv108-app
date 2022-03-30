@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable indent */
+import React, {useState} from 'react';
 import {Text, Line} from 'base';
 import {View, StyleSheet, Modal, TouchableOpacity} from 'react-native';
 import {colors, commonStyles, fonts, sizes} from 'styles';
@@ -6,6 +7,8 @@ import metrics from 'metrics';
 import ButtonForm from 'src/base/ButtonForm';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import InputDateTime from '../Inputs/InputDateTimeComponent';
+import {BoxSelect} from 'components';
+import configTypes from 'types';
 
 const ModalFormOnlyTimeComponent = ({
   visible = false,
@@ -16,7 +19,19 @@ const ModalFormOnlyTimeComponent = ({
   timeValue,
   onChangeDate,
   onChangeTime,
+  onChangeAssign,
 }) => {
+  const [activeAssign, setActiveAssign] = useState('');
+  const onPressAssign = code => {
+    if (code === activeAssign) {
+      setActiveAssign('');
+      onChangeAssign('');
+      return;
+    }
+    setActiveAssign(code);
+    onChangeAssign(code);
+  };
+
   return (
     <Modal
       onRequestClose={onPressCancel}
@@ -50,6 +65,47 @@ const ModalFormOnlyTimeComponent = ({
                 onChangeTime={onChangeTime}
                 onChangeDate={onChangeDate}
               />
+            </View>
+            <View style={styles.wrapDateTime}>
+              <Text style={styles.labelDateTime}>Chỉ định</Text>
+              {configTypes.form.ChiDinh.options.map((item, key) => {
+                return (
+                  <View
+                    style={[
+                      styles.boxSelect,
+                      configTypes.form.ChiDinh.options.length - 1 === key
+                        ? {marginBottom: sizes.ZERO}
+                        : {},
+                    ]}
+                    key={item.code}>
+                    <BoxSelect
+                      onPress={() => onPressAssign(item.code)}
+                      containerStyle={[
+                        activeAssign === item.code
+                          ? {
+                              backgroundColor: colors.COLOR_GREEN,
+                              borderColor: colors.COLOR_GREEN,
+                            }
+                          : {
+                              backgroundColor:
+                                colors.COLOR_NATIVE_BASE_LIGHT_100,
+                            },
+                      ]}
+                      labelStyle={[
+                        activeAssign === item.code
+                          ? {
+                              color: colors.COLOR_WHITE,
+                              fontFamily: fonts.quicksand.FONT_BOLD,
+                            }
+                          : {
+                              color: colors.COLOR_BLACK,
+                            },
+                      ]}
+                      label={item.name}
+                    />
+                  </View>
+                );
+              })}
             </View>
           </View>
           <View style={styles.wrapBtn}>
@@ -95,7 +151,9 @@ const styles = StyleSheet.create({
     paddingVertical: sizes.SIZE_20,
     paddingHorizontal: sizes.SIZE_15,
   },
-  wrapDateTime: {},
+  wrapDateTime: {
+    marginBottom: sizes.SIZE_15,
+  },
   inputDateTime: {
     width: '85%',
     alignSelf: 'center',
@@ -104,10 +162,16 @@ const styles = StyleSheet.create({
     ...commonStyles.labelInput,
     marginBottom: sizes.SIZE_7,
   },
+  boxSelect: {
+    width: '85%',
+    alignSelf: 'center',
+    marginBottom: sizes.SIZE_10,
+  },
   wrapBtn: {
     ...commonStyles.flexRowCenter,
     justifyContent: 'center',
-    marginTop: sizes.SIZE_30,
+    // marginTop: sizes.SIZE_30,
+    marginBottom: -sizes.SIZE_1,
   },
 });
 

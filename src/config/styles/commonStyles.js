@@ -23,7 +23,7 @@ const commonStyles = StyleSheet.create({
     height: sizes.SIZE_38,
   },
   labelInput: {
-    fontFamily: fonts.quicksand.FONT_MEDIUM,
+    fontFamily: fonts.quicksand.FONT_SEMI_BOLD,
     color: colors.COLOR_BLACK,
     fontSize: sizes.SIZE_14,
   },

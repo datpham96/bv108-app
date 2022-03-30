@@ -6,5 +6,4 @@ export {default as Input} from './Input';
 export {default as Background} from './Background';
 export {default as Loading} from './Loading';
 export {default as Checkbox} from './Checkbox';
-export {default as InputInfoForm} from './InputInfoForm';
 export {default as Line} from './Line';

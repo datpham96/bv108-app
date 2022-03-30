@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import {Text, Line} from 'base';
 import {View, StyleSheet, Modal, TouchableOpacity} from 'react-native';
@@ -6,6 +7,22 @@ import metrics from 'metrics';
 import ButtonForm from 'src/base/ButtonForm';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import InputDateTime from '../Inputs/InputDateTimeComponent';
+import {InputSelect} from 'components';
+
+const DATA_LIST_HOSTPITAL = [
+  {
+    label: 'Viện 108',
+    value: 1,
+  },
+  {
+    label: 'Viện Hưng Yên',
+    value: 2,
+  },
+  {
+    label: 'Viện Hải Dương',
+    value: 3,
+  },
+];
 
 const ModalFormOnlyTimeComponent = ({
   visible = false,
@@ -16,6 +33,7 @@ const ModalFormOnlyTimeComponent = ({
   timeValue,
   onChangeDate,
   onChangeTime,
+  onChangeHostpitalTransfer,
 }) => {
   return (
     <Modal
@@ -50,6 +68,16 @@ const ModalFormOnlyTimeComponent = ({
                 onChangeTime={onChangeTime}
                 onChangeDate={onChangeDate}
               />
+            </View>
+            <View style={styles.wrapDateTime}>
+              <Text style={styles.labelDateTime}>Bệnh viện chuyển đến</Text>
+              <View style={styles.inputSelect}>
+                <InputSelect
+                  onDonePress={item => onChangeHostpitalTransfer(item)}
+                  placeholder="Chọn"
+                  listData={DATA_LIST_HOSTPITAL}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.wrapBtn}>
@@ -95,7 +123,9 @@ const styles = StyleSheet.create({
     paddingVertical: sizes.SIZE_20,
     paddingHorizontal: sizes.SIZE_15,
   },
-  wrapDateTime: {},
+  wrapDateTime: {
+    marginBottom: sizes.SIZE_15,
+  },
   inputDateTime: {
     width: '85%',
     alignSelf: 'center',
@@ -104,10 +134,20 @@ const styles = StyleSheet.create({
     ...commonStyles.labelInput,
     marginBottom: sizes.SIZE_7,
   },
+  inputSelect: {
+    width: '85%',
+    alignSelf: 'center',
+  },
+  boxSelect: {
+    width: '85%',
+    alignSelf: 'center',
+    marginBottom: sizes.SIZE_10,
+  },
   wrapBtn: {
     ...commonStyles.flexRowCenter,
     justifyContent: 'center',
-    marginTop: sizes.SIZE_30,
+    // marginTop: sizes.SIZE_30,
+    marginBottom: -sizes.SIZE_1,
   },
 });
 

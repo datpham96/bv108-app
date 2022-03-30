@@ -12,7 +12,7 @@ const metrics = {
   screenHeight: height,
   statusBarHeight: getStatusBarHeight(),
   bottomHeight: getBottomSpace(),
-  heightInput: sizes.SIZE_44,
+  heightInput: sizes.SIZE_40,
   heightBottomTab: isIphoneX()
     ? getBottomSpace() + sizes.SIZE_50
     : getBottomSpace() + sizes.SIZE_60,

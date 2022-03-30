@@ -11,42 +11,32 @@ export type Props = {
   containerInput?: any;
   props?: any;
   placeholder?: any;
+  form?: boolean;
 };
 
-const InputInfo: React.FC<Props> = ({
+const InputBase: React.FC<Props> = ({
   customerInput,
   value,
   onChangeValue,
   containerInput,
-  props,
   placeholder,
+  form = false,
+  props,
 }) => {
   return (
     <View style={[styles.container, containerInput]}>
-      {/* <View style={styles.wrapInput}>
-        <TextInput
-          placeholder={placeholder}
-          placeholderTextColor={colors.COLOR_PLACEHOLDER}
-          value={value}
-          onChangeText={text => onChangeValue(text)}
-          style={[styles.input, customerInput]}
-          underlineColorAndroid="transparent"
-          autoCorrect={false}
-          autoComplete="off"
-          textContentType="none"
-          autoCapitalize="none"
-          autoCompleteType={'off'}
-          {...props}
-        />
-      </View> */}
       <Input
+        {...props}
+        value={value}
+        onChangeText={onChangeValue}
         selectionColor={colors.COLOR_NATIVE_BASE_SUCCESS_700}
         style={customerInput}
         fontSize={sizes.SIZE_13}
         placeholder={placeholder}
-        height={sizes.SIZE_42 + 'px'}
+        height={form ? sizes.SIZE_38 + 'px' : sizes.SIZE_42 + 'px'}
         autoCapitalize="none"
         autoComplete="off"
+        backgroundColor={colors.COLOR_NATIVE_BASE_LIGHT_100}
         autoCorrect={false}
         px={sizes.SIZE_20 + 'px'}
         rounded={sizes.SIZE_20 + 'px'}
@@ -64,26 +54,7 @@ const InputInfo: React.FC<Props> = ({
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    // height: metrics.heightInput,
-    // backgroundColor: colors.COLOR_WHITE,
-    // borderRadius: sizes.SIZE_30,
-    // borderColor: colors.COLOR_GREEN,
-    // borderWidth: sizes.SIZE_1,
-  },
-  wrapInput: {
-    width: '100%',
-    flexDirection: 'row',
-    paddingHorizontal: sizes.SIZE_20,
-  },
-  input: {
-    borderRadius: sizes.SIZE_20,
-    flex: sizes.SIZE_1,
-    backgroundColor: colors.COLOR_WHITE,
-    paddingHorizontal: sizes.SIZE_5,
-    color: colors.COLOR_BLACK,
-    height: sizes.SIZE_42,
-    fontSize: sizes.DEFAULT,
   },
 });
 
-export default InputInfo;
+export default InputBase;

@@ -24,6 +24,7 @@
       "reducers": ["./src/stores/reducers"],
       "HOC": ["./src/HOC"],
       "base": ["./src/base"],
+      "types": ["./src/config/types"],
       "customs": ["./src/helpers/customs"],
       "helpers": ["./src/helpers"],
       "styles": ["./src/config/styles"],

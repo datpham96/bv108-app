@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   container: {
     ...commonStyles.heightInputForm,
     borderWidth: sizes.SIZE_1,
-    borderColor: colors.COLOR_GREY,
+    borderColor: colors.COLOR_NATIVE_BASE_LIGHT_300,
     backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_100,
     borderRadius: sizes.SIZE_22,
     paddingHorizontal: sizes.SIZE_20,

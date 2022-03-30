@@ -1,18 +1,19 @@
 import React from 'react';
-import {
-  Background,
-  Input,
-  Button,
-  Checkbox,
-  ButtonItem,
-  InputInfoForm,
-} from 'base';
+import {Background, Input, Button, Checkbox, ButtonItem} from 'base';
 import {SafeAreaView, View, Text} from 'react-native';
 import {
   BoxFilter,
   InputDateTime,
   ModalFormOnlyTime,
   PopupConfirm,
+  InputForm,
+  InputSelect,
+  ModalFormAssign,
+  ModalFormHospitalTransfer,
+  ModalFormDischarge,
+  ModalFormClinical,
+  ModalFormSubClinical,
+  ModalFormDiagnostic,
 } from 'components';
 import ButtonForm from 'src/base/ButtonForm';
 
@@ -41,17 +42,77 @@ const Follow = () => {
           onChangeDate={date => console.log(date)}
           onChangeTime={time => console.log(time)}
         />
-        <InputInfoForm placeholder="Nhập kết quả" />
-        <ModalFormOnlyTime
+        <InputForm placeholder="Nhập kết quả" />
+        <InputSelect
+          onDonePress={() => console.log(343)}
+          selectedValue={1}
+          placeholder="Chọn"
+          listData={[
+            {
+              label: 'Nam',
+              value: 1,
+            },
+            {
+              label: 'Nữ',
+              value: 2,
+            },
+          ]}
+        />
+        {/* <ModalFormAssign
+          onChangeAssign={item => console.log(item)}
           onChangeDate={date => console.log(date)}
           onChangeTime={time => console.log(time)}
-          formName="Khởi phát"
+          formName="Chỉ định"
+          visible={isCheckbox}
+          onPressCancel={() => {
+            setIsCheckbox(false);
+            console.log(12424);
+          }}
+        /> */}
+        {/* <ModalFormDischarge
+          onChangeAssign={item => console.log(item)}
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
+          formName="Chuyển viện"
+          visible={isCheckbox}
+          onPressCancel={() => {
+            setIsCheckbox(false);
+            console.log(12424);
+          }}
+        /> */}
+        {/* <ModalFormClinical
+          onChangeAssign={item => console.log(item)}
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
+          formName="Lâm sàng"
+          visible={isCheckbox}
+          onPressCancel={() => {
+            setIsCheckbox(false);
+            console.log(12424);
+          }}
+        /> */}
+        <ModalFormSubClinical
+          onChangeAssign={item => console.log(item)}
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
+          formName="Cận lâm sàng"
           visible={isCheckbox}
           onPressCancel={() => {
             setIsCheckbox(false);
             console.log(12424);
           }}
         />
+        {/* <ModalFormDiagnostic
+          onChangeAssign={item => console.log(item)}
+          onChangeDate={date => console.log(date)}
+          onChangeTime={time => console.log(time)}
+          formName="Chuẩn đoán hình ảnh"
+          visible={isCheckbox}
+          onPressCancel={() => {
+            setIsCheckbox(false);
+            console.log(12424);
+          }}
+        /> */}
       </View>
     </Background>
   );

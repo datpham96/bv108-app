@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
 import {colors, commonStyles, sizes} from 'styles';
 
@@ -11,7 +11,7 @@ export type Props = {
   placeholder?: any;
 };
 
-const InputInfoForm: React.FC<Props> = ({
+const InputFormComponent: React.FC<Props> = ({
   customerInput,
   value,
   onChangeValue,
@@ -19,9 +19,21 @@ const InputInfoForm: React.FC<Props> = ({
   props,
   placeholder,
 }) => {
+  const [isFocus, setIsFocus] = useState(false);
   return (
-    <View style={[styles.container, containerInput]}>
+    <View
+      style={[
+        styles.container,
+        {
+          borderColor: isFocus
+            ? colors.COLOR_GREEN
+            : colors.COLOR_NATIVE_BASE_LIGHT_300,
+        },
+        containerInput,
+      ]}>
       <TextInput
+        onFocus={() => setIsFocus(true)}
+        onBlur={() => setIsFocus(false)}
         placeholder={placeholder}
         placeholderTextColor={colors.COLOR_PLACEHOLDER}
         value={value}
@@ -45,8 +57,8 @@ const styles = StyleSheet.create({
     ...commonStyles.heightInputForm,
 
     borderRadius: sizes.SIZE_30,
-    borderColor: colors.COLOR_GREY,
-    borderWidth: sizes.SIZE_1,
+    borderColor: colors.COLOR_NATIVE_BASE_LIGHT_300,
+    borderWidth: 1,
   },
   input: {
     borderRadius: sizes.SIZE_20,
@@ -59,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputInfoForm;
+export default InputFormComponent;
