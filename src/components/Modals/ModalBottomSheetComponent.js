@@ -11,15 +11,7 @@ import {sizes, commonStyles, colors} from 'styles';
 import metrics from 'metrics';
 import {getBottomSpace} from 'react-native-iphone-x-helper';
 
-export type Props = {
-  visible?: any;
-  onPressClose?: any;
-  onPressCancel?: any;
-  onPressOne?: any;
-  onPressTwo?: any;
-};
-
-const ModalBottomSheetComponent: React.FC<Props> = ({
+const ModalBottomSheetComponent = ({
   visible = false,
   onPressClose,
   onPressCancel,

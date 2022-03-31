@@ -10,6 +10,7 @@ const commonStyles = StyleSheet.create({
   mainTitle: {
     // fontFamily: fonts.lexendDeca.FONT_BOLD,
     fontSize: sizes.SIZE_20,
+    marginBottom: sizes.SIZE_10,
   },
   center: {
     justifyContent: 'center',
@@ -31,6 +32,10 @@ const commonStyles = StyleSheet.create({
     fontSize: sizes.SIZE_16,
     textAlign: 'center',
     fontFamily: fonts.quicksand.FONT_BOLD,
+  },
+  titleInput: {
+    fontSize: sizes.SIZE_14,
+    fontFamily: fonts.quicksand.FONT_MEDIUM,
   },
 });
 

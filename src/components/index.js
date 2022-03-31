@@ -20,3 +20,5 @@ export {default as ModalFormDischarge} from './Modals/ModalFormDischargeComponen
 export {default as ModalFormClinical} from './Modals/ModalFormClinicalComponent';
 export {default as ModalFormSubClinical} from './Modals/ModalFormSubClinicalComponent';
 export {default as ModalFormDiagnostic} from './Modals/ModalFormDiagnosticComponent';
+export {default as ModalFormList} from './Modals/ModalFormListComponent';
+export {default as ModalFilter} from './Modals/ModalFilterComponent';

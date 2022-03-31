@@ -10,6 +10,8 @@ const {width, height} = Dimensions.get('window');
 const metrics = {
   screenWidth: width,
   screenHeight: height,
+  screenHeightNoStatusBarAndBottomSpace:
+    height - getStatusBarHeight() - getBottomSpace(),
   statusBarHeight: getStatusBarHeight(),
   bottomHeight: getBottomSpace(),
   heightInput: sizes.SIZE_40,

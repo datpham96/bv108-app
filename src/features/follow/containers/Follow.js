@@ -14,8 +14,13 @@ import {
   ModalFormClinical,
   ModalFormSubClinical,
   ModalFormDiagnostic,
+  ModalFormList,
+  ModalFilter,
 } from 'components';
 import ButtonForm from 'src/base/ButtonForm';
+import configTypes from 'types';
+
+const FORM_LIST = configTypes.formList;
 
 const Follow = () => {
   const [isCheckbox, setIsCheckbox] = React.useState(false);
@@ -91,7 +96,7 @@ const Follow = () => {
             console.log(12424);
           }}
         /> */}
-        <ModalFormSubClinical
+        {/* <ModalFormSubClinical
           onChangeAssign={item => console.log(item)}
           onChangeDate={date => console.log(date)}
           onChangeTime={time => console.log(time)}
@@ -101,7 +106,7 @@ const Follow = () => {
             setIsCheckbox(false);
             console.log(12424);
           }}
-        />
+        /> */}
         {/* <ModalFormDiagnostic
           onChangeAssign={item => console.log(item)}
           onChangeDate={date => console.log(date)}
@@ -113,6 +118,18 @@ const Follow = () => {
             console.log(12424);
           }}
         /> */}
+        {/* <ModalFormList
+          onPressCancel={() => setIsCheckbox(false)}
+          visible={isCheckbox}
+          formList={FORM_LIST}
+          onPress={code => console.log(code)}
+        /> */}
+        <ModalFilter
+          onPressApply={() => console.log(1111)}
+          onPressRefresh={() => console.log(222)}
+          onPressCancel={() => setIsCheckbox(false)}
+          visible={isCheckbox}
+        />
       </View>
     </Background>
   );
