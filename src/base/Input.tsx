@@ -11,6 +11,7 @@ export type Props = {
   props?: any;
   placeholder?: any;
   form?: boolean;
+  disabled?: boolean;
 };
 
 const InputBase: React.FC<Props> = ({
@@ -21,11 +22,13 @@ const InputBase: React.FC<Props> = ({
   placeholder,
   form = false,
   props,
+  disabled = false,
 }) => {
   return (
     <View style={[styles.container, containerInput]}>
       <Input
         {...props}
+        isDisabled={disabled}
         value={value}
         onChangeText={onChangeValue}
         selectionColor={colors.COLOR_NATIVE_BASE_SUCCESS_700}

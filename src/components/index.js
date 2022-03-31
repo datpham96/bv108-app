@@ -22,9 +22,13 @@ export {default as ModalFormSubClinical} from './Modals/ModalFormSubClinicalComp
 export {default as ModalFormDiagnostic} from './Modals/ModalFormDiagnosticComponent';
 export {default as ModalFormList} from './Modals/ModalFormListComponent';
 export {default as ModalFilter} from './Modals/ModalFilterComponent';
+export {default as ModalHospitalizeNow} from './Modals/ModalHospitalizeNowComponent';
 
 //timeline
 export {default as TimeLine} from './TimeLineComponent';
 
 //timeline
 export {default as Tooltip} from './TooltipComponent';
+
+//header search
+export {default as HeaderSearch} from './HeaderSearchComponent';

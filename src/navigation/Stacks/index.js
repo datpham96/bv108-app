@@ -15,11 +15,11 @@ const screenOptions = {
 const RootStack = () => {
   return (
     <RootNavStack.Navigator>
-      <RootNavStack.Screen
+      {/* <RootNavStack.Screen
         name={navigationTypes.login.screen}
         component={LoginScreen}
         options={screenOptions}
-      />
+      /> */}
       <RootNavStack.Screen
         name={navigationTypes.bottomTabs.screen}
         component={BottomTabs}

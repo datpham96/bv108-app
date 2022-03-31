@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Text} from 'base';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors, commonStyles, sizes} from 'styles';
 
@@ -14,7 +13,6 @@ export type Props = {
 };
 
 const Checkbox: React.FC<Props> = ({
-  disabled,
   onPress,
   containerStyle,
   isActive,
@@ -22,19 +20,23 @@ const Checkbox: React.FC<Props> = ({
 }) => {
   return (
     <TouchableOpacity
-      disabled={disabled}
-      activeOpacity={0.6}
+      activeOpacity={0.8}
       onPress={onPress}
       style={[styles.container, containerStyle]}>
       <View
         style={[
           styles.ousideCheckbox,
-          //   {backgroundColor: isActive ? colors.COLOR_GREEN : colors.COLOR_WHITE},
+          {
+            borderColor: isActive
+              ? colors.COLOR_GREEN
+              : colors.COLOR_NATIVE_BASE_MUTED_400,
+          },
         ]}>
         {isActive && (
           <MaterialCommunityIcons
+            style={styles.icon}
             name="check"
-            size={sizes.SIZE_16}
+            size={sizes.SIZE_14}
             color={colors.COLOR_GREEN}
           />
         )}
@@ -44,18 +46,21 @@ const Checkbox: React.FC<Props> = ({
   );
 };
 
-const WIDTH_CHECK_BOX = sizes.SIZE_18;
+const WIDTH_CHECK_BOX = sizes.SIZE_14;
 const styles = StyleSheet.create({
   container: {
     ...commonStyles.flexRowCenter,
   },
   ousideCheckbox: {
     borderWidth: sizes.SIZE_1,
-    borderColor: colors.COLOR_GREY,
+    borderColor: colors.COLOR_NATIVE_BASE_MUTED_400,
     width: WIDTH_CHECK_BOX,
     height: WIDTH_CHECK_BOX,
     borderRadius: sizes.SIZE_1,
     ...commonStyles.center,
+  },
+  icon: {
+    // marginBottom: sizes.SIZE_2,
   },
   label: {
     marginLeft: sizes.SIZE_5,

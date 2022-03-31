@@ -3,7 +3,6 @@ import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStack from './Stacks';
 import {navigationRef, isReadyRef} from './RootNavigation';
-import {fonts, sizes} from '../config/styles';
 import SplashScreen from 'react-native-splash-screen';
 
 function Navigation() {

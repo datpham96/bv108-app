@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   VirtualizedList,
+  Platform,
 } from 'react-native';
 import {colors, commonStyles, fonts, sizes} from 'styles';
 import metrics from 'metrics';
@@ -16,6 +17,7 @@ import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import typeConfig from 'types';
 import {ScrollView} from 'native-base';
 import ButtonForm from 'src/base/ButtonForm';
+import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 
 const STATUS_LIST = typeConfig.listConsulationStatus;
 const TIME_KHOI_PHAT_LIST = typeConfig.timeKhoiPhatList;
@@ -72,6 +74,12 @@ const ModalFilterComponent = ({
       return;
     }
     setDepId(code);
+  };
+
+  const handleRefresh = () => {
+    setStatusCode('');
+    setDepId('');
+    setTimeKhoiPhatCode('');
   };
 
   const handleSeeMore = () => {};
@@ -154,9 +162,10 @@ const ModalFilterComponent = ({
                     <View
                       style={[
                         styles.boxDep,
-                        // key === 2 || key === 3
-                        //   ? {marginBottom: sizes.ZERO}
-                        //   : {},
+                        key === DEPARTMENT_LIST.length - 1 ||
+                        key === DEPARTMENT_LIST.length - 2
+                          ? {marginBottom: sizes.ZERO}
+                          : {},
                       ]}
                       key={key}>
                       <BoxFilter
@@ -185,10 +194,7 @@ const ModalFilterComponent = ({
           <Line />
           <View style={styles.wrapBtn}>
             <ButtonItem
-              onPress={() => {
-                onPressRefresh();
-                onPressCancel();
-              }}
+              onPress={handleRefresh}
               customStyle={styles.btnRefresh}
               customLabelStyle={styles.labelBtnRefresh}
               label="Thiết lập lại"
@@ -225,7 +231,14 @@ const styles = StyleSheet.create({
   contentContainer: {
     backgroundColor: colors.COLOR_WHITE,
     width: metrics.screenWidth,
-    height: metrics.screenHeight,
+    ...Platform.select({
+      ios: {
+        height: metrics.screenHeight,
+      },
+      android: {
+        height: metrics.screenHeight - getStatusBarHeight(),
+      },
+    }),
     padding: sizes.SIZE_5,
   },
   logoSuccess: {
@@ -235,7 +248,14 @@ const styles = StyleSheet.create({
   },
   mainTitle: {
     fontSize: sizes.SIZE_20,
-    marginTop: sizes.SIZE_15,
+    ...Platform.select({
+      ios: {
+        marginTop: sizes.SIZE_15,
+      },
+      android: {
+        marginTop: sizes.SIZE_5,
+      },
+    }),
     fontFamily: fonts.quicksand.FONT_MEDIUM,
   },
   wrapBtn: {
@@ -250,8 +270,15 @@ const styles = StyleSheet.create({
   },
   close: {
     position: 'absolute',
-    zIndex: 1,
-    top: metrics.statusBarHeight,
+    zIndex: sizes.SIZE_1,
+    ...Platform.select({
+      ios: {
+        top: metrics.statusBarHeight,
+      },
+      android: {
+        top: sizes.SIZE_10,
+      },
+    }),
     alignSelf: 'flex-end',
     right: sizes.SIZE_10,
   },
@@ -274,6 +301,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     alignSelf: 'flex-end',
+    marginRight: sizes.SIZE_1,
   },
   sectionBox: {
     width: wp('42%'),

@@ -7,6 +7,8 @@ const colors = {
   COLOR_PLACEHOLDER: '#a8a29e',
   COLOR_WHITE_GREY: '#e7e5e4',
   COLOR_GREY: 'grey',
+  COLOR_YELLOW: 'yellow',
+  COLOR_ORANGE: 'orange',
 
   //---native-base-----
   COLOR_NATIVE_BASE_SUCCESS_700: '#15803d',
