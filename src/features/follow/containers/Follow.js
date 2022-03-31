@@ -1,6 +1,6 @@
 import React from 'react';
 import {Background, Input, Button, Checkbox, ButtonItem} from 'base';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View, ScrollView, Text} from 'react-native';
 import {
   BoxFilter,
   InputDateTime,
@@ -16,9 +16,11 @@ import {
   ModalFormDiagnostic,
   ModalFormList,
   ModalFilter,
+  TimeLine,
 } from 'components';
 import ButtonForm from 'src/base/ButtonForm';
 import configTypes from 'types';
+import {sizes} from 'styles';
 
 const FORM_LIST = configTypes.formList;
 
@@ -26,7 +28,7 @@ const Follow = () => {
   const [isCheckbox, setIsCheckbox] = React.useState(false);
   return (
     <Background>
-      <View>
+      <ScrollView contentContainerStyle={{paddingBottom: sizes.SIZE_15}}>
         <Text>Follow</Text>
         <Input placeholder="d23523" />
         <Button label="Đăng nhập" />
@@ -124,13 +126,15 @@ const Follow = () => {
           formList={FORM_LIST}
           onPress={code => console.log(code)}
         /> */}
-        <ModalFilter
+        {/* <ModalFilter
           onPressApply={() => console.log(1111)}
           onPressRefresh={() => console.log(222)}
           onPressCancel={() => setIsCheckbox(false)}
           visible={isCheckbox}
-        />
-      </View>
+        /> */}
+        <TimeLine />
+        <TimeLine />
+      </ScrollView>
     </Background>
   );
 };

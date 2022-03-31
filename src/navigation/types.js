@@ -23,6 +23,10 @@ const types = {
     screen: 'account',
     name: 'Tài khoản',
   },
+  login: {
+    screen: 'login',
+    name: 'Đăng nhập',
+  },
 };
 
 export default types;

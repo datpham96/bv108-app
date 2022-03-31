@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Image} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {colors, sizes} from 'styles';
-import metrics from 'metrics';
-import {Box, Input} from 'native-base';
+import {Input} from 'native-base';
 
 export type Props = {
   customerInput?: any;

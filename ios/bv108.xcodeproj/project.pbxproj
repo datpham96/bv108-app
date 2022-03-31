@@ -12,6 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		34290BCEA92D50276CB78032 /* libPods-bv108.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A0750E5CE3A18BD7C6DCA /* libPods-bv108.a */; };
+		732A116527F5932E005CAE45 /* Quicksand-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732A116327F592F7005CAE45 /* Quicksand-BoldItalic.ttf */; };
+		732A116627F5932E005CAE45 /* Quicksand-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732A116427F592F7005CAE45 /* Quicksand-Italic.ttf */; };
+		732A116727F5932E005CAE45 /* Quicksand-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732A116227F592F7005CAE45 /* Quicksand-LightItalic.ttf */; };
 		73D264B427F45309004DEB79 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D264B027F45133004DEB79 /* Quicksand-Bold.ttf */; };
 		73D264B527F45309004DEB79 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D264B227F45133004DEB79 /* Quicksand-Light.ttf */; };
 		73D264B627F45309004DEB79 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D264B327F45133004DEB79 /* Quicksand-Medium.ttf */; };
@@ -45,6 +48,9 @@
 		560A0750E5CE3A18BD7C6DCA /* libPods-bv108.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bv108.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF334B777A34D4D418A1C17 /* Pods-bv108.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bv108.release.xcconfig"; path = "Target Support Files/Pods-bv108/Pods-bv108.release.xcconfig"; sourceTree = "<group>"; };
 		60C27875007EC296D872EEE8 /* libPods-bv108-bv108Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bv108-bv108Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		732A116227F592F7005CAE45 /* Quicksand-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-LightItalic.ttf"; path = "../src/assets/fonts/Quicksand-LightItalic.ttf"; sourceTree = "<group>"; };
+		732A116327F592F7005CAE45 /* Quicksand-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-BoldItalic.ttf"; path = "../src/assets/fonts/Quicksand-BoldItalic.ttf"; sourceTree = "<group>"; };
+		732A116427F592F7005CAE45 /* Quicksand-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Italic.ttf"; path = "../src/assets/fonts/Quicksand-Italic.ttf"; sourceTree = "<group>"; };
 		73D264AF27F45133004DEB79 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Regular.ttf"; path = "../src/assets/fonts/Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		73D264B027F45133004DEB79 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.ttf"; path = "../src/assets/fonts/Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		73D264B127F45133004DEB79 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-SemiBold.ttf"; path = "../src/assets/fonts/Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		BF351CAA27F2258D00F50575 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				732A116327F592F7005CAE45 /* Quicksand-BoldItalic.ttf */,
+				732A116427F592F7005CAE45 /* Quicksand-Italic.ttf */,
+				732A116227F592F7005CAE45 /* Quicksand-LightItalic.ttf */,
 				73D264B027F45133004DEB79 /* Quicksand-Bold.ttf */,
 				73D264B227F45133004DEB79 /* Quicksand-Light.ttf */,
 				73D264B327F45133004DEB79 /* Quicksand-Medium.ttf */,
@@ -307,6 +316,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732A116527F5932E005CAE45 /* Quicksand-BoldItalic.ttf in Resources */,
+				732A116627F5932E005CAE45 /* Quicksand-Italic.ttf in Resources */,
+				732A116727F5932E005CAE45 /* Quicksand-LightItalic.ttf in Resources */,
 				73D264B427F45309004DEB79 /* Quicksand-Bold.ttf in Resources */,
 				73D264B527F45309004DEB79 /* Quicksand-Light.ttf in Resources */,
 				73D264B627F45309004DEB79 /* Quicksand-Medium.ttf in Resources */,

@@ -45,6 +45,9 @@
 	<string>$(PRODUCT_NAME) muốn truy cập camera của bạn</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Quicksand-BoldItalic.ttf</string>
+		<string>Quicksand-LightItalic.ttf</string>
+		<string>Quicksand-Italic.ttf</string>
 		<string>Quicksand-Bold.ttf</string>
 		<string>Quicksand-Light.ttf</string>
 		<string>Quicksand-Medium.ttf</string>

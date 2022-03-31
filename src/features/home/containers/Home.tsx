@@ -9,7 +9,6 @@ const Home: React.FC = () => {
       <View>
         <Text style={{}}>Home2Screen</Text>
         <Text>32432 Phajm Tien dat</Text>
-        <InputInfo />
       </View>
     </Background>
   );

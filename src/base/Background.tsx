@@ -20,7 +20,7 @@ const Background: React.FC<Props> = ({
 }) => {
   return (
     <SafeAreaView style={[styles.container, customContainer]}>
-      <StatusBar animated={true} barStyle={'light-content'} />
+      <StatusBar animated={true} barStyle={'dark-content'} />
       {isKeyboard ? (
         <KeyboardAwareScrollView
           enableOnAndroid={true}
