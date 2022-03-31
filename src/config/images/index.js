@@ -5,7 +5,7 @@ const images = {
   },
   backgrounds: {},
   logos: {
-    default: require('../../assets/images/logos/default.png'),
+    default: require('../../assets/images/logos/default.jpg'),
   },
 };
 
