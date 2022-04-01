@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {Background, ButtonItem} from 'base';
-import {Space, StackHeader} from 'components';
+import {
+  ModalFormOnlyTime,
+  ModalHospitalizeNow,
+  Space,
+  StackHeader,
+} from 'components';
 import {colors, commonStyles, sizes} from 'styles';
 import styles from './styles';
 import {checkVar} from 'src/helpers/funcs';
@@ -11,8 +16,28 @@ import {Item} from '../components';
 
 const SearchResult = () => {
   const [textSearch, setTextSearch] = useState('');
+  const [visibleHospitalizeModal, setVisibleHospitalizeModal] = useState(false);
+  const [visibleAddPatientModal, setVisibleAddPatientModal] = useState(false);
+
+  const handleDetailItem = item => {};
+  const handleHospitalize = () => {
+    setVisibleHospitalizeModal(true);
+  };
+  const handleViewConsulation = () => {};
+  const handleAddPatient = () => {
+    setVisibleAddPatientModal(true);
+  };
   return (
     <Background>
+      <ModalHospitalizeNow
+        visible={visibleAddPatientModal}
+        onPressCancel={() => setVisibleAddPatientModal(false)}
+      />
+      <ModalFormOnlyTime
+        formName="Nhập viện"
+        visible={visibleHospitalizeModal}
+        onPressCancel={() => setVisibleHospitalizeModal(false)}
+      />
       <StackHeader>
         <View style={styles.wrapInputSearch}>
           <TextInput
@@ -49,6 +74,7 @@ const SearchResult = () => {
         <Space />
         <View style={styles.wrapBtnAdd}>
           <ButtonItem
+            onPress={handleAddPatient}
             customStyle={styles.btnAdd}
             customLabelStyle={styles.labelBtnAdd}
             label="Thêm"
@@ -61,6 +87,9 @@ const SearchResult = () => {
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
           renderItem={item => (
             <Item
+              onPressItem={() => handleDetailItem(item)}
+              onPressHospitalize={handleHospitalize}
+              onPressViewConsulation={handleViewConsulation}
               item={item.item}
               index={item.index}
               totalLength={[1, 2, 3, 4, 5, 6, 7, 8, 9].length}

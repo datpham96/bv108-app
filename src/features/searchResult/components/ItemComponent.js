@@ -4,7 +4,14 @@ import {ButtonItem, Line, Text} from 'base';
 import {colors, commonStyles, fonts, sizes} from 'styles';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
-const ItemComponent = ({item, onPressItem, totalLength, index}) => {
+const ItemComponent = ({
+  item,
+  onPressItem,
+  totalLength,
+  index,
+  onPressHospitalize,
+  onPressViewConsulation,
+}) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -27,6 +34,13 @@ const ItemComponent = ({item, onPressItem, totalLength, index}) => {
           <Text style={styles.textInfo}>Mã bệnh nhân: PID23432</Text>
         </TouchableOpacity>
         <ButtonItem
+          onPress={() => {
+            if (index === 2 || index === 5) {
+              onPressViewConsulation();
+            } else {
+              onPressHospitalize();
+            }
+          }}
           customStyle={[
             styles.btn,
             index === 2 || index === 5
