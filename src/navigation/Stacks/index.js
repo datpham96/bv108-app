@@ -3,7 +3,7 @@ import {Platform} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import navigationTypes from '../types';
 import BottomTabs from '../BottomTabs';
-import {LoginScreen} from 'features';
+import {LoginScreen, SearchResultScreen} from 'features';
 
 const RootNavStack = createStackNavigator();
 
@@ -15,6 +15,11 @@ const screenOptions = {
 const RootStack = () => {
   return (
     <RootNavStack.Navigator>
+      <RootNavStack.Screen
+        name={navigationTypes.searchResult.screen}
+        component={SearchResultScreen}
+        options={screenOptions}
+      />
       {/* <RootNavStack.Screen
         name={navigationTypes.login.screen}
         component={LoginScreen}

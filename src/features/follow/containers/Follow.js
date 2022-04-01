@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import {Background} from 'base';
 import {View, FlatList, Text, TouchableOpacity} from 'react-native';
-import {HeaderSearch, ModalFilter, ModalHospitalizeNow} from 'components';
+import {
+  HeaderSearch,
+  ModalFilter,
+  ModalHospitalizeNow,
+  Space,
+} from 'components';
 import {Item} from '../components';
 import patientList from '../../../data/patientList.json';
 import styles from './styles';
@@ -39,7 +44,7 @@ const Follow = () => {
           <Text style={styles.textFilter}>Lọc</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.space} />
+      <Space />
       <FlatList
         data={DATA_LIST}
         contentContainerStyle={styles.contentContainerFlatlist}

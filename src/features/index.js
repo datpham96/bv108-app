@@ -14,3 +14,6 @@ export {default as AccountScreen} from './account/containers/Account';
 
 //Đăng nhập
 export {default as LoginScreen} from './login/containers/Login';
+
+//Đăng nhập
+export {default as SearchResultScreen} from './searchResult/containers/SearchResult';

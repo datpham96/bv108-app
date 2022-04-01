@@ -27,6 +27,10 @@ const types = {
     screen: 'login',
     name: 'Đăng nhập',
   },
+  searchResult: {
+    screen: 'searchResult',
+    name: 'Kết quả tìm kiếm',
+  },
 };
 
 export default types;

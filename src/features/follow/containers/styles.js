@@ -26,11 +26,6 @@ const styles = StyleSheet.create({
     marginLeft: -sizes.SIZE_3,
     color: colors.COLOR_GREEN,
   },
-  space: {
-    height: sizes.SIZE_6,
-    width: metrics.screenWidth,
-    backgroundColor: colors.COLOR_NATIVE_BASE_LIGHT_100,
-  },
 });
 
 export default styles;

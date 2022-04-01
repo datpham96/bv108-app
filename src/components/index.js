@@ -32,3 +32,9 @@ export {default as Tooltip} from './TooltipComponent';
 
 //header search
 export {default as HeaderSearch} from './HeaderSearchComponent';
+
+//stack
+export {default as StackHeader} from './StackHeaderComponent';
+
+//space
+export {default as Space} from './SpaceComponent';

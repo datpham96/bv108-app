@@ -9,6 +9,8 @@ const colors = {
   COLOR_GREY: 'grey',
   COLOR_YELLOW: 'yellow',
   COLOR_ORANGE: 'orange',
+  COLOR_BLUE: '#5A8ED1',
+  COLOR_RED_ORANGE: '#FF655B',
 
   //---native-base-----
   COLOR_NATIVE_BASE_SUCCESS_700: '#15803d',
@@ -30,8 +32,7 @@ const colors = {
   COLOR_DARK_SEPERATOR: '#d4d4d4',
   COLOR_BLACK_TRANSP: 'rgba(0, 0, 0, 0.7)',
   COLOR_GREY_TRANSP: 'rgba(67, 85, 85, 0.7)',
-  COLOR_BLUE: '#5A8ED1',
-  COLOR_RED_ORANGE: '#FF655B',
+
   COLOR_PINK: '#F178B6',
   COLOR_DARK_BLUE: '#1A2246',
   COLOR_UNDERLAY_BLUE: '#2466BA',
