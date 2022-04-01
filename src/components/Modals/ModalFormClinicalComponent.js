@@ -7,6 +7,7 @@ import {
   Modal,
   TouchableOpacity,
   Platform,
+  StatusBar,
 } from 'react-native';
 import {colors, commonStyles, fonts, sizes} from 'styles';
 import metrics from 'metrics';
@@ -69,9 +70,9 @@ const ModalFormDischargeComponent = ({
   onChangeGlassgowValue,
   ASPECTSValue,
   onChangeASPECTSValue,
-  LietNuaNguoiSValue = false,
+  LietNuaNguoiValue = false,
   onChangeLietNuaNguoiValue,
-  LietMatSValue = false,
+  LietMatValue = false,
   onChangeLietMatValue,
   ThatNgonValue = false,
   onChangeThatNgonValue,
@@ -82,6 +83,7 @@ const ModalFormDischargeComponent = ({
       animationType="none"
       transparent={true}
       visible={visible}>
+      <StatusBar hidden />
       <View style={styles.backgroundModal} />
       <KeyboardAwareScrollView
         enableAutomaticScroll={Platform.OS === 'ios'}
@@ -149,9 +151,14 @@ const ModalFormDischargeComponent = ({
               <View style={styles.wrapDateTime}>
                 <Text style={styles.labelDateTime}>Liệt nửa người</Text>
                 <View style={styles.wrapTickBoolean}>
-                  <ButtonTickBoolean active={LietNuaNguoiSValue} label="Có" />
                   <ButtonTickBoolean
-                    active={!LietNuaNguoiSValue}
+                    onPress={onChangeLietNuaNguoiValue}
+                    active={LietNuaNguoiValue}
+                    label="Có"
+                  />
+                  <ButtonTickBoolean
+                    onPress={onChangeLietNuaNguoiValue}
+                    active={!LietNuaNguoiValue}
                     label="Không"
                   />
                 </View>
@@ -159,15 +166,31 @@ const ModalFormDischargeComponent = ({
               <View style={styles.wrapDateTime}>
                 <Text style={styles.labelDateTime}>Liệt mặt</Text>
                 <View style={styles.wrapTickBoolean}>
-                  <ButtonTickBoolean active={LietMatSValue} label="Có" />
-                  <ButtonTickBoolean active={!LietMatSValue} label="Không" />
+                  <ButtonTickBoolean
+                    onPress={onChangeLietMatValue}
+                    active={LietMatValue}
+                    label="Có"
+                  />
+                  <ButtonTickBoolean
+                    onPress={onChangeLietMatValue}
+                    active={!LietMatValue}
+                    label="Không"
+                  />
                 </View>
               </View>
               <View style={styles.wrapDateTime}>
                 <Text style={styles.labelDateTime}>Thất ngôn</Text>
                 <View style={styles.wrapTickBoolean}>
-                  <ButtonTickBoolean active={ThatNgonValue} label="Có" />
-                  <ButtonTickBoolean active={!ThatNgonValue} label="Không" />
+                  <ButtonTickBoolean
+                    onPress={onChangeThatNgonValue}
+                    active={ThatNgonValue}
+                    label="Có"
+                  />
+                  <ButtonTickBoolean
+                    onPress={onChangeThatNgonValue}
+                    active={!ThatNgonValue}
+                    label="Không"
+                  />
                 </View>
               </View>
             </ScrollView>

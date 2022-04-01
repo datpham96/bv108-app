@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Platform,
   Image,
+  StatusBar,
 } from 'react-native';
 import {colors, commonStyles, sizes} from 'styles';
 import metrics from 'metrics';
@@ -19,6 +20,7 @@ import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {getBottomSpace, getStatusBarHeight} from 'react-native-iphone-x-helper';
 import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
 import ModalBottomSheet from '../Modals/ModalBottomSheetComponent';
+import lodash from 'lodash';
 
 const options = {
   quality: 0.5,
@@ -88,8 +90,12 @@ const ModalFormDischargeComponent = ({
     });
   };
 
-  const handleRemoveImage = key => {
-    setPreviewListImages(previewListImages.splice(1, key));
+  const handleRemoveImage = item => {
+    setPreviewListImages(
+      lodash.filter(previewListImages, o => {
+        return o.uri !== item.uri;
+      }),
+    );
   };
 
   const handleOpenBottomSheetImagePicker = () => {
@@ -121,6 +127,7 @@ const ModalFormDischargeComponent = ({
       animationType="none"
       transparent={true}
       visible={visible}>
+      <StatusBar hidden />
       <View style={styles.backgroundModal} />
       <ModalBottomSheet
         onPressOne={() => {
@@ -235,7 +242,7 @@ const ModalFormDischargeComponent = ({
                         <TouchableOpacity
                           style={styles.iconClose}
                           activeOpacity={0.8}
-                          onPress={() => handleRemoveImage(key)}>
+                          onPress={() => handleRemoveImage(item)}>
                           <MaterialCommunityIcons
                             name="close-circle"
                             size={sizes.SIZE_22}

@@ -83,7 +83,7 @@ const configTypes = {
       name: 'Lâm sàng',
     },
     {
-      code: 'CanLamSan',
+      code: 'CanLamSang',
       name: 'Cận lâm sàng',
     },
     {
@@ -105,6 +105,18 @@ const configTypes = {
     {
       code: 'HoiChan',
       name: 'Hội chẩn',
+    },
+    {
+      code: 'TieuSoiHuyet',
+      name: 'Tiêu sợi huyết',
+    },
+    {
+      code: 'LayHuyetKhoiBangDungCuCoHoc',
+      name: 'Lấy huyết khối bằng dụng cụ cơ học',
+    },
+    {
+      code: 'ChanDoanHinhAnh',
+      name: 'Chẩn đoán hình ảnh',
     },
   ],
 };

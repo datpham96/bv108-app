@@ -37,6 +37,11 @@ const commonStyles = StyleSheet.create({
     fontSize: sizes.SIZE_14,
     fontFamily: fonts.quicksand.FONT_MEDIUM,
   },
+  nameStack: {
+    fontFamily: fonts.quicksand.FONT_BOLD,
+    color: colors.COLOR_WHITE,
+    fontSize: sizes.SIZE_16,
+  },
 });
 
 export default commonStyles;

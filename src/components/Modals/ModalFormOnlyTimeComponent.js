@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   mainTitle: {
     ...commonStyles.titleForm,
     marginBottom: sizes.SIZE_10,
+    marginHorizontal: sizes.SIZE_25,
   },
   line: {
     width: '92%',
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
     ...commonStyles.flexRowCenter,
     justifyContent: 'center',
     marginTop: sizes.SIZE_30,
+    marginBottom: -sizes.SIZE_1,
   },
 });
 

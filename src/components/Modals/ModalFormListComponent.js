@@ -35,7 +35,7 @@ const ModalFormListComponent = ({
           <ScrollView>
             {formList.map((item, key) => {
               return (
-                <View>
+                <View key={key}>
                   <TouchableOpacity
                     style={styles.wrapItem}
                     activeOpacity={0.8}
@@ -45,7 +45,9 @@ const ModalFormListComponent = ({
                     }}>
                     <Text style={styles.itemName}>{item.name}</Text>
                   </TouchableOpacity>
-                  {formList.length > key && <Line />}
+                  {formList.length - 1 > key && (
+                    <Line customStyle={styles.line} />
+                  )}
                 </View>
               );
             })}
@@ -77,16 +79,22 @@ const styles = StyleSheet.create({
   },
   wrapItem: {
     ...commonStyles.center,
-    paddingVertical: sizes.SIZE_20,
+    paddingVertical: sizes.SIZE_15,
+    paddingHorizontal: sizes.SIZE_20,
   },
   itemName: {
     fontSize: sizes.DEFAULT,
     fontFamily: fonts.quicksand.FONT_MEDIUM,
+    textAlign: 'center',
   },
   close: {
     marginTop: metrics.statusBarHeight + sizes.SIZE_5,
     alignSelf: 'flex-end',
     marginRight: sizes.SIZE_10,
+  },
+  line: {
+    width: '85%',
+    alignSelf: 'center',
   },
 });
 

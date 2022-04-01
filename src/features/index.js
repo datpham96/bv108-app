@@ -15,5 +15,17 @@ export {default as AccountScreen} from './account/containers/Account';
 //Đăng nhập
 export {default as LoginScreen} from './login/containers/Login';
 
-//Đăng nhập
+//Kết quả tìm kiếm
 export {default as SearchResultScreen} from './searchResult/containers/SearchResult';
+
+//Chi tiết bệnh án
+export {default as MedicalRecordDetailScreen} from './medicalRecordDetail/containers/MedicalRecordDetail';
+
+//Thôn tin người dùng
+export {default as UserInfoScreen} from './userInfo/containers/UserInfo';
+
+//Đổi mật khẩu
+export {default as ChangePasswordScreen} from './changePassword/containers/ChangePassword';
+
+//Hướng dẫn sử dụng
+export {default as UserManualScreen} from './userManual/containers/UserManual';

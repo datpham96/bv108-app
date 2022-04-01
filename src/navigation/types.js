@@ -31,6 +31,22 @@ const types = {
     screen: 'searchResult',
     name: 'Kết quả tìm kiếm',
   },
+  medicalRecordDetail: {
+    screen: 'medicalRecordDetail',
+    name: 'Chi tiết bệnh án',
+  },
+  userInfo: {
+    screen: 'userInfo',
+    name: 'Thông tin người dùng',
+  },
+  changePassword: {
+    screen: 'changePassword',
+    name: 'Đổi mật khẩu',
+  },
+  userManual: {
+    screen: 'userManual',
+    name: 'Hướng dẫn sử dụng',
+  },
 };
 
 export default types;

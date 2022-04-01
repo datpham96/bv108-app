@@ -8,6 +8,7 @@ import {theme} from 'native-base';
 import FastImage from 'react-native-fast-image';
 import images from 'images';
 import Tooltip from './TooltipComponent';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 const TimeLineComponent = () => {
   const [toggleTooltip, setToggleTooltip] = useState(false);
@@ -19,48 +20,64 @@ const TimeLineComponent = () => {
       <View style={styles.wrapLabel}>
         <Text style={styles.textLabel}>04:00 20/12/2022</Text>
       </View>
-      <View style={styles.content}>
-        <View style={styles.wrapBoxContent}>
-          <View style={styles.boxHeader}>
-            <Text style={styles.formName}>Khởi phát</Text>
-            <View style={styles.wrapActionTooltip}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={() => setToggleTooltip(!toggleTooltip)}>
-                <MaterialCommunityIcons
-                  name="dots-horizontal"
-                  size={sizes.SIZE_20}
-                  color={colors.COLOR_GREY}
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => setToggleTooltip(false)}>
+        <View style={styles.content}>
+          <View style={styles.wrapBoxContent}>
+            <View style={styles.boxHeader}>
+              <Text style={styles.formName}>Khởi phát</Text>
+              <View style={styles.wrapActionTooltip}>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => setToggleTooltip(!toggleTooltip)}>
+                  <MaterialCommunityIcons
+                    name="dots-horizontal"
+                    size={sizes.SIZE_20}
+                    color={colors.COLOR_GREY}
+                  />
+                </TouchableOpacity>
+                {toggleTooltip && (
+                  <View style={styles.boxTooltip}>
+                    <Tooltip onPress={code => setToggleTooltip(false)} />
+                  </View>
+                )}
+              </View>
+            </View>
+            <View style={styles.index}>
+              <Text style={styles.indexValue}>ASPECTS: 5</Text>
+              <Text style={styles.indexValue}>Glassgow: 5</Text>
+              <Text style={styles.indexValue}>Liệt mặt: Có</Text>
+              <Text style={styles.indexValue}>Liệt nửa người: Không</Text>
+              <Text style={styles.indexValue}>NIHSS: 5</Text>
+              <Text style={styles.indexValue}>Thất ngôn: Không</Text>
+              <View style={styles.wrapImage}>
+                <FastImage
+                  style={styles.image}
+                  source={images.avatars.default}
                 />
-              </TouchableOpacity>
-              {toggleTooltip && (
-                <View style={styles.boxTooltip}>
-                  <Tooltip onPress={code => setToggleTooltip(false)} />
-                </View>
-              )}
+                <FastImage
+                  style={styles.image}
+                  source={images.avatars.default}
+                />
+                <FastImage
+                  style={styles.image}
+                  source={images.avatars.default}
+                />
+                <FastImage
+                  style={styles.image}
+                  source={images.avatars.default}
+                />
+              </View>
             </View>
+            <Text style={styles.time}>12:10 20/03/2022</Text>
           </View>
-          <View style={styles.index}>
-            <Text style={styles.indexValue}>ASPECTS: 5</Text>
-            <Text style={styles.indexValue}>Glassgow: 5</Text>
-            <Text style={styles.indexValue}>Liệt mặt: Có</Text>
-            <Text style={styles.indexValue}>Liệt nửa người: Không</Text>
-            <Text style={styles.indexValue}>NIHSS: 5</Text>
-            <Text style={styles.indexValue}>Thất ngôn: Không</Text>
-            <View style={styles.wrapImage}>
-              <FastImage style={styles.image} source={images.avatars.default} />
-              <FastImage style={styles.image} source={images.avatars.default} />
-              <FastImage style={styles.image} source={images.avatars.default} />
-              <FastImage style={styles.image} source={images.avatars.default} />
-            </View>
+          <View style={styles.wrapInfo}>
+            <Text style={styles.name}>Nhập bởi Nguyễn Văn Anh</Text>
+            <Text style={styles.hospital}>Bệnh viện 105</Text>
           </View>
-          <Text style={styles.time}>12:10 20/03/2022</Text>
         </View>
-        <View style={styles.wrapInfo}>
-          <Text style={styles.name}>Nhập bởi Nguyễn Văn Anh</Text>
-          <Text style={styles.hospital}>Bệnh viện 105</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
