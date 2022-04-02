@@ -6,6 +6,10 @@ export const navigationRef = React.createRef();
 export function navigate(name, params) {
   navigationRef.current?.navigate(name, params);
 }
+
+export function replace(name) {
+  navigationRef.current?.replace(name);
+}
 // export function navigateAuth(name, params, isLogin) {
 //   if (isLogin) {
 //     navigationRef.current?.navigate(name, params);

@@ -17,7 +17,7 @@ const HeaderSearchComponent = ({
   onPress,
   textValue,
   onChangeTextValue,
-  onPressClearText,
+  onSubmitEditing,
 }) => {
   const [textSearch, setTextSearch] = useState(textValue);
   return (
@@ -29,6 +29,7 @@ const HeaderSearchComponent = ({
           color={colors.COLOR_GREEN}
         />
         <TextInput
+          onSubmitEditing={onSubmitEditing}
           value={textSearch}
           onChangeText={text => {
             onChangeTextValue(text);

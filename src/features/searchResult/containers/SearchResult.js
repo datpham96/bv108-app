@@ -13,6 +13,8 @@ import {checkVar} from 'src/helpers/funcs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {FlatList} from 'native-base';
 import {Item} from '../components';
+import * as RootNavigation from 'RootNavigation';
+import navigationTypes from 'navigationTypes';
 
 const SearchResult = () => {
   const [textSearch, setTextSearch] = useState('');
@@ -23,19 +25,23 @@ const SearchResult = () => {
   const handleHospitalize = () => {
     setVisibleHospitalizeModal(true);
   };
-  const handleViewConsulation = () => {};
+  const handleViewConsulation = () => {
+    RootNavigation.navigate(navigationTypes.medicalRecordDetail.screen);
+  };
   const handleAddPatient = () => {
     setVisibleAddPatientModal(true);
   };
   return (
     <Background>
       <ModalHospitalizeNow
+        onPress={() => setVisibleAddPatientModal(false)}
         visible={visibleAddPatientModal}
         onPressCancel={() => setVisibleAddPatientModal(false)}
       />
       <ModalFormOnlyTime
         formName="Nhập viện"
         visible={visibleHospitalizeModal}
+        onPress={() => setVisibleHospitalizeModal(false)}
         onPressCancel={() => setVisibleHospitalizeModal(false)}
       />
       <StackHeader>

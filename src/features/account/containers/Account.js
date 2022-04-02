@@ -18,6 +18,9 @@ const Account = () => {
   const handleUserManual = () => {
     RootNavigation.navigate(navigationTypes.userManual.screen);
   };
+  const handleLogout = () => {
+    RootNavigation.navigate(navigationTypes.login.screen);
+  };
   return (
     <Background>
       <ScrollView style={styles.container}>
@@ -50,6 +53,7 @@ const Account = () => {
             label="Đổi mật khẩu"
           />
           <Button
+            onPress={handleLogout}
             customLabelStyle={styles.labelBtnAction}
             customStyle={styles.btnAction}
             label="Đăng xuất"

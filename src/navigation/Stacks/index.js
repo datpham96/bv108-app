@@ -23,6 +23,11 @@ const RootStack = () => {
   return (
     <RootNavStack.Navigator>
       <RootNavStack.Screen
+        name={navigationTypes.login.screen}
+        component={LoginScreen}
+        options={screenOptions}
+      />
+      <RootNavStack.Screen
         name={navigationTypes.bottomTabs.screen}
         component={BottomTabs}
         options={screenOptions}
@@ -47,11 +52,7 @@ const RootStack = () => {
         component={SearchResultScreen}
         options={screenOptions}
       />
-      <RootNavStack.Screen
-        name={navigationTypes.login.screen}
-        component={LoginScreen}
-        options={screenOptions}
-      />
+
       <RootNavStack.Screen
         name={navigationTypes.userManual.screen}
         component={UserManualScreen}

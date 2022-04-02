@@ -12,6 +12,8 @@ import patientList from '../../../data/patientList.json';
 import styles from './styles';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors, sizes} from 'styles';
+import * as RootNavigation from 'RootNavigation';
+import navigationTypes from 'navigationTypes';
 
 const DATA_LIST = patientList;
 
@@ -24,9 +26,27 @@ const Follow = () => {
   const handleHospitalize = () => {
     setVisibleHospitalizeModal(true);
   };
+  const handleSearchResult = () => {
+    RootNavigation.navigate(navigationTypes.searchResult.screen);
+  };
+  const handleSubmitHospitalize = () => {
+    setVisibleHospitalizeModal(false);
+    RootNavigation.navigate(navigationTypes.medicalRecordDetail.screen);
+  };
   return (
     <Background>
+      <ModalFilter
+        visible={visibleFilterModal}
+        onPressApply={() => setVisibleFilterModal(false)}
+        onPressCancel={() => setVisibleFilterModal(false)}
+      />
+      <ModalHospitalizeNow
+        onPressCancel={() => setVisibleHospitalizeModal(false)}
+        onPress={handleSubmitHospitalize}
+        visible={visibleHospitalizeModal}
+      />
       <HeaderSearch
+        onSubmitEditing={handleSearchResult}
         onChangeTextValue={text => console.log(text)}
         onPress={handleHospitalize}
       />
@@ -56,16 +76,6 @@ const Follow = () => {
             index={item.index}
           />
         )}
-      />
-      <ModalFilter
-        visible={visibleFilterModal}
-        onPressApply={() => setVisibleFilterModal(false)}
-        onPressCancel={() => setVisibleFilterModal(false)}
-      />
-      <ModalHospitalizeNow
-        onPressCancel={() => setVisibleHospitalizeModal(false)}
-        onPress={() => setVisibleHospitalizeModal(false)}
-        visible={visibleHospitalizeModal}
       />
     </Background>
   );
