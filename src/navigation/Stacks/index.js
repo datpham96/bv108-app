@@ -11,6 +11,7 @@ import {
   UserInfoScreen,
   UserManualScreen,
 } from 'features';
+import PatientDetail from 'src/features/patientDetail/containers/PatientDetail';
 
 const RootNavStack = createStackNavigator();
 
@@ -22,6 +23,11 @@ const screenOptions = {
 const RootStack = () => {
   return (
     <RootNavStack.Navigator>
+      {/* <RootNavStack.Screen
+        name={navigationTypes.patientDetail.screen}
+        component={PatientDetail}
+        options={screenOptions}
+      /> */}
       <RootNavStack.Screen
         name={navigationTypes.login.screen}
         component={LoginScreen}

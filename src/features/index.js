@@ -29,3 +29,6 @@ export {default as ChangePasswordScreen} from './changePassword/containers/Chang
 
 //Hướng dẫn sử dụng
 export {default as UserManualScreen} from './userManual/containers/UserManual';
+
+//Chi tiết bệnh nhân
+export {default as PatientDetailScreen} from './patientDetail/containers/PatientDetail';

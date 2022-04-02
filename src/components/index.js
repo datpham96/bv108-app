@@ -10,6 +10,7 @@ export {default as PopupAlert} from './Popups/PopupAlertComponent';
 export {default as InputDateTime} from './Inputs/InputDateTimeComponent';
 export {default as InputSelect} from './Inputs/InputSelectComponent';
 export {default as InputForm} from './Inputs/InputFormComponent';
+export {default as InputSearch} from './Inputs/InputSearchComponent';
 
 //Modals
 export {default as ModalBottomSheet} from './Modals/ModalBottomSheetComponent';
@@ -23,6 +24,7 @@ export {default as ModalFormDiagnostic} from './Modals/ModalFormDiagnosticCompon
 export {default as ModalFormList} from './Modals/ModalFormListComponent';
 export {default as ModalFilter} from './Modals/ModalFilterComponent';
 export {default as ModalHospitalizeNow} from './Modals/ModalHospitalizeNowComponent';
+export {default as ModalMergePatient} from './Modals/ModalMergePatientComponent';
 
 //timeline
 export {default as TimeLine} from './TimeLineComponent';

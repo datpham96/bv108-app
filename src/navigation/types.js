@@ -47,6 +47,10 @@ const types = {
     screen: 'userManual',
     name: 'Hướng dẫn sử dụng',
   },
+  patientDetail: {
+    screen: 'patientDetail',
+    name: 'Chi tiết bệnh nhân',
+  },
 };
 
 export default types;
